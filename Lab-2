@@ -1,0 +1,108 @@
+#5. Write a program to Generate Fibonacci Series
+python
+Copy code
+def fibonacci(n):
+    fib_series = [0, 1]
+    while len(fib_series) < n:
+        fib_series.append(fib_series[-1] + fib_series[-2])
+    return fib_series
+
+# Input from user
+num = int(input("Enter the number of terms in Fibonacci series: "))
+fib_series = fibonacci(num)
+print(f"The Fibonacci series up to {num} terms is: {fib_series}")
+#6. Write a program to Calculate Factorial Using a Loop
+python
+Copy code
+def factorial(n):
+    result = 1
+    for i in range(1, n + 1):
+        result *= i
+    return result
+
+# Input from user
+num = int(input("Enter a number to calculate its factorial: "))
+fact = factorial(num)
+print(f"The factorial of {num} is: {fact}")
+#7. Write a program to check if the given number is an Armstrong number or not
+An Armstrong number (or Narcissistic number) is a number that is equal to the sum of its digits raised to the power of the number of digits.
+
+python
+Copy code
+def is_armstrong(num):
+    digits = str(num)
+    num_digits = len(digits)
+    sum_of_powers = sum(int(digit) ** num_digits for digit in digits)
+    return sum_of_powers == num
+
+# Input from user
+num = int(input("Enter a number to check if it is Armstrong: "))
+if is_armstrong(num):
+    print(f"{num} is an Armstrong number.")
+else:
+    print(f"{num} is not an Armstrong number.")
+#8. Write a program to check if the given number is a Perfect number or not
+A Perfect number is a number that is equal to the sum of its proper divisors (excluding the number itself).
+
+python
+Copy code
+def is_perfect(num):
+    divisors_sum = sum(i for i in range(1, num) if num % i == 0)
+    return divisors_sum == num
+
+# Input from user
+num = int(input("Enter a number to check if it is a perfect number: "))
+if is_perfect(num):
+    print(f"{num} is a perfect number.")
+else:
+    print(f"{num} is not a perfect number.")
+#9. Write a program to check if the given number is a Strong number or not
+A Strong number (also called a Krishnamurthy number) is a number where the sum of the factorials of its digits equals the number itself.
+
+python
+Copy code
+import math
+
+def is_strong(num):
+    digits = str(num)
+    sum_of_factorials = sum(math.factorial(int(digit)) for digit in digits)
+    return sum_of_factorials == num
+
+# Input from user
+num = int(input("Enter a number to check if it is a strong number: "))
+if is_strong(num):
+    print(f"{num} is a strong number.")
+else:
+    print(f"{num} is not a strong number.")
+#10. Write a program to Print Multiplication Tables
+python
+Copy code
+def multiplication_table(n):
+    for i in range(1, 11):
+        print(f"{n} x {i} = {n * i}")
+
+# Input from user
+num = int(input("Enter a number to print its multiplication table: "))
+multiplication_table(num)
+#11. Write a program to Calculate the LCM and GCD of Two Numbers
+The LCM (Least Common Multiple) of two numbers is the smallest number that is a multiple of both. The GCD (Greatest Common Divisor) is the largest number that divides both numbers.
+
+python
+Copy code
+import math
+
+def gcd(a, b):
+    return math.gcd(a, b)
+
+def lcm(a, b):
+    return abs(a * b) // gcd(a, b)
+
+# Input from user
+num1 = int(input("Enter the first number: "))
+num2 = int(input("Enter the second number: "))
+
+gcd_result = gcd(num1, num2)
+lcm_result = lcm(num1, num2)
+
+print(f"The GCD of {num1} and {num2} is: {gcd_result}")
+print(f"The LCM of {num1} and {num2} is: {lcm_result}")
