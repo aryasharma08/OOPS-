@@ -1,0 +1,49 @@
+
+# Program to separate a string into comma (,) separated values
+
+def task_2a():
+    print("\nTask 2A: Separate the string into comma separated values")
+    X = "India.is.my.country"
+    # Replace '.' with ','
+    separated_values = X.replace(".", ",")
+    print(f"Original String: {X}")
+    print(f"String with comma separated values: {separated_values}")
+
+
+# Program to remove a given character from a string
+
+def task_2b():
+    print("\nTask 2B: Remove a given character from a string")
+    Y = "M.A.N.I.P.A.L"
+    char_to_remove = "A"  # Example character to remove
+    # Remove character 'A' from the string
+    modified_string = Y.replace(char_to_remove, "")
+    print(f"Original String: {Y}")
+    print(f"Modified String after removing '{char_to_remove}': {modified_string}")
+
+# Program to remove the (.) dots from the string
+
+def task_2c():
+    print("\nTask 2C: Remove the dots (.) from the string")
+    Y = "M.A.N.I.P.A.L"
+    # Remove all '.' characters
+    removed_dots = Y.replace(".", "")
+    print(f"Original String: {Y}")
+    print(f"String after removing dots: {removed_dots}")
+
+
+# Program to sort a list of strings alphabetically
+
+def task_3():
+    print("\nTask 3: Sort a list of strings alphabetically")
+    strings_list = ["India", "Banana", "Apple", "Grapes", "Cherry"]
+    # Sort the list of strings
+    sorted_list = sorted(strings_list)
+    print(f"Original List: {strings_list}")
+    print(f"Sorted List: {sorted_list}")
+
+task_2a()
+task_2b()
+task_2c()
+task_3()
+
