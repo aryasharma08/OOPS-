@@ -1,0 +1,142 @@
+# Pattern #1: Simple Number Triangle Pattern
+def pattern_1():
+    print("\nPattern #1: Simple Number Triangle Pattern")
+    for i in range(1, 6):
+        print(" ".join([str(i)] * i))
+
+# Pattern #2: Inverted Pyramid of Numbers
+def pattern_2():
+    print("\nPattern #2: Inverted Pyramid of Numbers")
+    for i in range(5, 0, -1):
+        print(" " * (5 - i) + " ".join([str(i)] * i))
+
+# Pattern #3: Half Pyramid Pattern of Numbers
+def pattern_3():
+    print("\nPattern #3: Half Pyramid Pattern of Numbers")
+    for i in range(1, 6):
+        print(" " * (5 - i) + " ".join([str(x) for x in range(1, i + 1)]))
+
+# Pattern #4: Inverted Pyramid of Descending Numbers
+def pattern_4():
+    print("\nPattern #4: Inverted Pyramid of Descending Numbers")
+    for i in range(5, 0, -1):
+        print(" " * (5 - i) + " ".join([str(i)] * i))
+
+# Pattern #5: Inverted Pyramid of the Same Digit
+def pattern_5():
+    print("\nPattern #5: Inverted Pyramid of the Same Digit")
+    for i in range(5, 0, -1):
+        print(" " * (5 - i) + " ".join([str(5)] * i))
+
+# Pattern #6: Reverse Pyramid of Numbers
+def pattern_6():
+    print("\nPattern #6: Reverse Pyramid of Numbers")
+    for i in range(1, 6):
+        print(" " * (5 - i) + " ".join([str(x) for x in range(i, 0, -1)]))
+
+# Pattern #7: Inverted Half Pyramid Number Pattern
+def pattern_7():
+    print("\nPattern #7: Inverted Half Pyramid Number Pattern")
+    for i in range(6, 0, -1):
+        print(" ".join([str(x) for x in range(i)]))
+
+# Pattern #8: Pyramid of Natural Numbers Less Than 10
+def pattern_8():
+    print("\nPattern #8: Pyramid of Natural Numbers Less Than 10")
+    num = 1
+    for i in range(1, 4):
+        row = [str(x) for x in range(num, num + i)]
+        print(" ".join(row))
+        num += i
+
+# Pattern #9: Reverse Pattern of Digits from 10
+def pattern_9():
+    print("\nPattern #9: Reverse Pattern of Digits from 10")
+    num = 1
+    for i in range(1, 5):
+        row = [str(x) for x in range(num + i - 1, num - 1, -1)]
+        print(" ".join(row))
+        num += i
+
+# Pattern #10: Unique Pyramid Pattern of Digits
+def pattern_10():
+    print("\nPattern #10: Unique Pyramid Pattern of Digits")
+    for i in range(1, 6):
+        row = [str(x) for x in range(1, i + 1)]
+        print(" ".join(row + row[:-1][::-1]))
+
+# Pattern #11: Connected Inverted Pyramid Pattern of Numbers
+def pattern_11():
+    print("\nPattern #11: Connected Inverted Pyramid Pattern of Numbers")
+    for i in range(5, 0, -1):
+        left = " ".join([str(x) for x in range(5, i - 1, -1)])
+        right = " ".join([str(x) for x in range(i, 6)])
+        print(f"{left} {right}")
+
+# Pattern #12: Even Number Pyramid Pattern
+def pattern_12():
+    print("\nPattern #12: Even Number Pyramid Pattern")
+    num = 10
+    for i in range(1, 6):
+        row = [str(num - 2 * x) for x in range(i)]
+        print(" ".join(row))
+        num -= 2
+
+# Pattern #13: Pyramid of Horizontal Tables
+def pattern_13():
+    print("\nPattern #13: Pyramid of Horizontal Tables")
+    for i in range(7):
+        row = [str(i * j) for j in range(i + 1)]
+        print(" ".join(row))
+
+# Pattern #14: Pyramid Pattern of Alternate Numbers
+def pattern_14():
+    print("\nPattern #14: Pyramid Pattern of Alternate Numbers")
+    for i in range(1, 10, 2):
+        print(" ".join([str(i)] * i))
+
+# Pattern #15: Mirrored Pyramid (Right-angled Triangle) Pattern of Numbers
+def pattern_15():
+    print("\nPattern #15: Mirrored Pyramid (Right-angled Triangle) Pattern of Numbers")
+    for i in range(1, 6):
+        print(" " * (5 - i) + " ".join([str(x) for x in range(1, i + 1)]))
+
+# Pattern #16: Equilateral Triangle with Stars (Asterisk Symbol)
+def pattern_16():
+    print("\nPattern #16: Equilateral Triangle with Stars (Asterisk Symbol)")
+    for i in range(1, 8):
+        print(" " * (7 - i) + "* " * i)
+
+# Pattern #17: Downward Triangle Pattern of Stars
+def pattern_17():
+    print("\nPattern #17: Downward Triangle Pattern of Stars")
+    for i in range(6, 0, -1):
+        print(" " * (6 - i) + "* " * i)
+
+# Pattern #18: Pyramid Pattern of Stars
+def pattern_18():
+    print("\nPattern #18: Pyramid Pattern of Stars")
+    for i in range(1, 6):
+        print("* " * i)
+
+
+pattern_1()
+pattern_2()
+pattern_3()
+pattern_4()
+pattern_5()
+pattern_6()
+pattern_7()
+pattern_8()
+pattern_9()
+pattern_10()
+pattern_11()
+pattern_12()
+pattern_13()
+pattern_14()
+pattern_15()
+pattern_16()
+pattern_17()
+pattern_18()
+
+
