@@ -1,0 +1,73 @@
+# ------------------------- Task 1: Person Class with Name and Age -------------------------
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+# Create two instances of the Person class
+person1 = Person("Alice", 30)
+person2 = Person("Bob", 25)
+
+# Print their name and age
+print("Task 1 - Person Class:")
+print(f"Name: {person1.name}, Age: {person1.age}")
+print(f"Name: {person2.name}, Age: {person2.age}")
+print("\n")  # To separate output for clarity
+
+# ------------------------- Task 2: Student Class with Name and Roll Number -------------------------
+class Student:
+    def __init__(self, name, roll_no):
+        self.name = name
+        self.roll_no = roll_no
+
+# Create an object of the Student class
+student1 = Student("John", 2)
+
+# Print the student's details
+print("Task 2 - Student Class with Name and Roll Number:")
+print(f"Name: {student1.name}, Roll Number: {student1.roll_no}")
+print("\n")  # To separate output for clarity
+
+# ------------------------- Task 3: Bank Account Class with Deposit, Withdraw, and Balance Check -------------------------
+class BankAccount:
+    def __init__(self, balance=0):
+        self.balance = balance
+    
+    def deposit(self, amount):
+        self.balance += amount
+        print(f"Deposited: {amount}, New Balance: {self.balance}")
+    
+    def withdraw(self, amount):
+        if amount <= self.balance:
+            self.balance -= amount
+            print(f"Withdrew: {amount}, New Balance: {self.balance}")
+        else:
+            print("Insufficient balance!")
+    
+    def check_balance(self):
+        print(f"Current Balance: {self.balance}")
+
+# Create a BankAccount object and test the methods
+account = BankAccount(1000)
+print("Task 3 - Bank Account Operations:")
+account.deposit(500)
+account.withdraw(300)
+account.check_balance()
+print("\n")  # To separate output for clarity
+
+# ------------------------- Task 4: Student Class with Name and Age -------------------------
+class StudentWithAge:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+# Create objects to represent different students
+student1 = StudentWithAge("Alice", 20)
+student2 = StudentWithAge("Bob", 22)
+student3 = StudentWithAge("Charlie", 19)
+
+# Print details of the students
+print("Task 4 - Student Class with Name and Age:")
+print(f"Student 1: Name = {student1.name}, Age = {student1.age}")
+print(f"Student 2: Name = {student2.name}, Age = {student2.age}")
+print(f"Student 3: Name = {student3.name}, Age = {student3.age}")
