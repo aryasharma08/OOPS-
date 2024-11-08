@@ -1,0 +1,95 @@
+#Question 1: Create a class Person and subclass Student
+
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def display(self):
+        print(f"Name: {self.name}, Age: {self.age}")
+
+
+class Student(Person):
+    def __init__(self, name, age, student_id):
+        # Initialize the parent class (Person) attributes
+        super().__init__(name, age)
+        self.student_id = student_id
+
+    def show_details(self):
+        # Display details of both the parent and child class
+        self.display()
+        print(f"Student ID: {self.student_id}")
+
+
+# Demonstrating the functionality
+student = Student("John Doe", 20, "S12345")
+student.show_details()
+#Question 2: Create classes Vehicle, Car, and ElectricCar demonstrating multilevel inheritance
+
+class Vehicle:
+    def info(self):
+        print("This is a vehicle")
+
+
+class Car(Vehicle):
+    def car_info(self):
+        print("This is a car")
+
+
+class ElectricCar(Car):
+    def battery_info(self):
+        print("This car has a battery.")
+
+
+# Demonstrating multilevel inheritance
+electric_car = ElectricCar()
+electric_car.info()         # From Vehicle
+electric_car.car_info()     # From Car
+electric_car.battery_info() # From ElectricCar
+Question 3: Create classes Teacher, Author, and TutorAuthor using multiple inheritance
+
+class Teacher:
+    def description(self):
+        print("I am a Teacher. I educate students.")
+
+
+class Author:
+    def description(self):
+        print("I am an Author. I write books.")
+
+
+class TutorAuthor(Teacher, Author):
+    def description(self):
+        # Using super() to call the parent classes' methods
+        super().description()
+        # We can manually call the second parent's description as needed
+        Author.description(self)
+
+
+# Demonstrating multiple inheritance
+tutor_author = TutorAuthor()
+tutor_author.description()
+#Question 4: Create a class Animal and subclasses Dog and Cat demonstrating hierarchical inheritance.
+
+
+class Animal:
+    def sound(self):
+        print("Animals make sound")
+
+
+class Dog(Animal):
+    def sound(self):
+        print("Dog barks")
+
+
+class Cat(Animal):
+    def sound(self):
+        print("Cat meows")
+
+
+# Demonstrating hierarchical inheritance
+dog = Dog()
+dog.sound()  # Outputs: Dog barks
+
+cat = Cat()
+cat.sound()  # Outputs: Cat meows
