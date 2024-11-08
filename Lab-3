@@ -1,0 +1,84 @@
+#1. Write a program to check if the given number is a Disarium Number.
+A Disarium Number is a number where the sum of its digits raised to the power of their respective positions is equal to the number itself.
+
+For example:
+For 175:
+1^1 + 7^2 + 5^3 = 1 + 49 + 125 = 175.
+
+
+def is_disarium(num):
+    digits = str(num)
+    sum_of_powers = sum(int(digit) ** (i + 1) for i, digit in enumerate(digits))
+    return sum_of_powers == num
+
+# Input from user
+num = int(input("Enter a number to check if it is a Disarium number: "))
+if is_disarium(num):
+    print(f"{num} is a Disarium number.")
+else:
+    print(f"{num} is not a Disarium number.")
+#2. Write a program to determine whether the given number is a Harshad Number.
+A Harshad Number (or Niven number) is a number that is divisible by the sum of its digits.
+
+def is_harshad(num):
+    digit_sum = sum(int(digit) for digit in str(num))
+    return num % digit_sum == 0
+
+# Input from user
+num = int(input("Enter a number to check if it is a Harshad number: "))
+if is_harshad(num):
+    print(f"{num} is a Harshad number.")
+else:
+    print(f"{num} is not a Harshad number.")
+#3. Write a program to Print Armstrong Numbers from 1 to 1000.
+An Armstrong Number (or Narcissistic number) is a number where the sum of its digits raised to the power of the number of digits is equal to the number itself.
+
+python
+Copy code
+def is_armstrong(num):
+    digits = str(num)
+    num_digits = len(digits)
+    sum_of_powers = sum(int(digit) ** num_digits for digit in digits)
+    return sum_of_powers == num
+
+# Print Armstrong numbers between 1 and 1000
+print("Armstrong numbers from 1 to 1000 are:")
+for num in range(1, 1001):
+    if is_armstrong(num):
+        print(num, end=" ")
+#4. Write a program to Compute the Value of X^n.
+#This program computes X^n using the power operator.
+
+def power(x, n):
+    return x ** n
+
+# Input from user
+x = float(input("Enter the base number (x): "))
+n = int(input("Enter the exponent (n): "))
+result = power(x, n)
+print(f"The value of {x}^{n} is: {result}")
+#5. Write a program to Calculate the value of nCr.
+#The combination formula nCr is used to calculate how many ways you can choose r objects from n objects. The formula is:
+
+
+n#Cr= r!(n−r)!n!
+​
+ 
+
+def nCr(n, r):
+    return math.comb(n, r)
+
+# Input from user
+n = int(input("Enter the value of n: "))
+r = int(input("Enter the value of r: "))
+result = nCr(n, r)
+print(f"The value of {n}C{r} is: {result}")
+#6. Write a program to count the sum of digits in the entered number.
+#This program calculates the sum of the digits of a given number.
+def sum_of_digits(num):
+    return sum(int(digit) for digit in str(num))
+
+# Input from user
+num = int(input("Enter a number to calculate the sum of its digits: "))
+result = sum_of_digits(num)
+print(f"The sum of digits in {num} is: {result}")
