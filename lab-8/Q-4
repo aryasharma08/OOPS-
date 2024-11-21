@@ -1,0 +1,50 @@
+class MergeSort:
+    def __init__(self, data):
+        self.data = data
+
+    def sort(self):
+        self.data = self._merge_sort(self.data)
+
+    def _merge_sort(self, array):
+        if len(array) <= 1:
+            return array
+
+        # Split the array into halves
+        mid = len(array) // 2
+        left_half = self._merge_sort(array[:mid])
+        right_half = self._merge_sort(array[mid:])
+
+        # Merge the sorted halves
+        return self._merge(left_half, right_half)
+
+    def _merge(self, left, right):
+        merged = []
+        left_index = right_index = 0
+
+        # Merge elements from left and right arrays in sorted order
+        while left_index < len(left) and right_index < len(right):
+            if left[left_index] < right[right_index]:
+                merged.append(left[left_index])
+                left_index += 1
+            else:
+                merged.append(right[right_index])
+                right_index += 1
+
+        # Append any remaining elements
+        merged.extend(left[left_index:])
+        merged.extend(right[right_index:])
+        return merged
+
+    def get_sorted_data(self):
+        return self.data
+
+
+# Example usage
+if __name__ == "__main__":
+    numbers = [64, 34, 25, 12, 22, 11, 90]
+    print("Original list:", numbers)
+
+    sorter = MergeSort(numbers)
+    sorter.sort()
+
+    print("Sorted list:", sorter.get_sorted_data())
