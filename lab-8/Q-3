@@ -1,0 +1,29 @@
+class SelectionSort:
+    def __init__(self, data):
+        self.data = data
+
+    def sort(self):
+        n = len(self.data)
+        for i in range(n):
+            # Assume the first unsorted element is the smallest
+            min_index = i
+            for j in range(i + 1, n):
+                if self.data[j] < self.data[min_index]:
+                    min_index = j  # Update the index of the smallest element
+            # Swap the smallest element with the first unsorted element
+            if min_index != i:
+                self.data[i], self.data[min_index] = self.data[min_index], self.data[i]
+
+    def get_sorted_data(self):
+        return self.data
+
+
+# Example usage
+if __name__ == "__main__":
+    numbers = [64, 34, 25, 12, 22, 11, 90]
+    print("Original list:", numbers)
+
+    sorter = SelectionSort(numbers)
+    sorter.sort()
+
+    print("Sorted list:", sorter.get_sorted_data())
