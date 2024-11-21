@@ -1,0 +1,28 @@
+class InsertionSort:
+    def __init__(self, data):
+        self.data = data
+
+    def sort(self):
+        for i in range(1, len(self.data)):
+            # Store the current element
+            current_value = self.data[i]
+            # Find the position to insert the current element
+            j = i - 1
+            while j >= 0 and self.data[j] > current_value:
+                self.data[j + 1] = self.data[j]  # Shift element to the right
+                j -= 1
+            self.data[j + 1] = current_value  # Insert the element at the correct position
+
+    def get_sorted_data(self):
+        return self.data
+
+
+# Example usage
+if __name__ == "__main__":
+    numbers = [64, 34, 25, 12, 22, 11, 90]
+    print("Original list:", numbers)
+
+    sorter = InsertionSort(numbers)
+    sorter.sort()
+
+    print("Sorted list:", sorter.get_sorted_data())
