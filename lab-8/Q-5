@@ -1,0 +1,27 @@
+class LinearSearch:
+    def __init__(self, data):
+        self.data = data
+
+    def search(self, target):
+        for index, value in enumerate(self.data):
+            if value == target:
+                return index  # Return the index of the target element
+        return -1  # Return -1 if the target element is not found
+
+    def get_data(self):
+        return self.data
+
+
+# Example usage
+if __name__ == "__main__":
+    numbers = [64, 34, 25, 12, 22, 11, 90]
+    print("List:", numbers)
+
+    target = 22
+    searcher = LinearSearch(numbers)
+    result = searcher.search(target)
+
+    if result != -1:
+        print(f"Element {target} found at index {result}.")
+    else:
+        print(f"Element {target} not found.")
